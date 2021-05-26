@@ -14,7 +14,7 @@
 
   tasks:
     - name: install packages
-      sudo: yes
+ #     sudo: yes
       package:
         name:  "{{ packages }}"
         state: "{{ version }}"
