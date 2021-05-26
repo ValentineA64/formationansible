@@ -1,0 +1,18 @@
+- hosts: remote
+  vars_prompt:
+    - name: src
+      prompt: "quelle est la source?"
+      private: no
+
+    - name: dest
+      prompt: "quelle est la destination?"
+      private: no
+
+  tasks:
+  - name: test ping
+    ping:
+
+  - name: copy file to remote server
+    copy:
+      src:  "{{ src }}"
+      dest: "{{ dest }}"
