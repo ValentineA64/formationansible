@@ -1,0 +1,19 @@
+- hosts: remote
+  vars:
+    version: latest
+
+  vars_prompt:
+
+    - name: packages
+      prompt: "Quel package souhaitez-vous installer?"
+      private: no
+
+    - name: version
+      prompt: "Dans quelle version?"
+      private: no
+
+  tasks:
+    - name: install npackages
+      package:
+        name:  "{{ packages }}"
+        state: "{{ version }}"
