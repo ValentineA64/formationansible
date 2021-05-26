@@ -13,7 +13,8 @@
       private: no
 
   tasks:
-    - name: install npackages
+    - name: install packages
+      become: yes
       package:
         name:  "{{ packages }}"
         state: "{{ version }}"
