@@ -1,5 +1,5 @@
 - hosts: remote
-  become: yes
+ # become: yes
   vars:
     version: latest
 
@@ -15,7 +15,7 @@
 
   tasks:
     - name: install packages
- #     sudo: yes
+      sudo: yes
       package:
         name:  "{{ packages }}"
         state: "{{ version }}"
