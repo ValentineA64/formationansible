@@ -2,20 +2,6 @@
   become: yes
 
   vars_prompt:
-
     - name: packages
       prompt: "Quel package souhaitez-vous installer?"
       private: no
-
-    - name: version
-      prompt: "Dans quelle version? (latest par défaut)"
-      private: no
-
-  tasks:
-    - name: Run the equivalent of "apt-get update" as a separate step
-      apt:
-        update_cache: yes
-    - name: install packages
-      become_user: root
-      apt:
-        name:  "{{ packages }}{{ '=' + version | default(omit) }}"
