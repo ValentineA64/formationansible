@@ -10,16 +10,16 @@
 
 
 # installer le paquet souhaité
-# - name: install packages
-#   become_user: root
-#   apt:
-#     name:  "{{ packages }}"
+- name: install packages
+  become_user: root
+  apt:
+    name:  "{{ packages }}"
 
 # créer un user
-- name: "Create user accounts"
-  user:
-    name: "{{ user_name }}"
-    state: present
+# - name: "Create user accounts"
+#   user:
+#     name: "{{ user_name }}"
+#     state: present
     # groups: users
     # append: yes
 # SSH 
