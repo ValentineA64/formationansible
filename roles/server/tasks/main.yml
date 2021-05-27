@@ -18,10 +18,10 @@
 # créer un user
 - name: "Create user accounts"
   user:
-    name:   "{{ user_name }}"
+    name: coucou
     state: present
-    groups: users
-    append: yes
+    # groups: users
+    # append: yes
 # SSH 
 # - name: Create a 2048-bit SSH key for user
 #   user:
