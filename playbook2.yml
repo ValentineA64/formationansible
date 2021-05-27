@@ -18,4 +18,4 @@
     - name: install packages
       become_user: root
       apt:
-        name:  "{{ packages }}={{ version | default(omit) }}"
+        name:  "{{ packages }}{{ '=' + version | default(omit) }}"
