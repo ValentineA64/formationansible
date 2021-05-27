@@ -17,7 +17,5 @@
         update_cache: yes
     - name: install packages
       become_user: root
-      vars:
-        version: latest
       apt:
-        name:  " {{ packages + '=' + version }} "
+        name:  "{{ packages }}={{ version | default(omit) }}"
