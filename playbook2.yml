@@ -20,4 +20,4 @@
       vars:
         version: latest
       apt:
-        name:  "{{ packages }}" =  "{{ version }} "
+        name:  " {{ packages + '=' + version }} "
