@@ -1,9 +1,6 @@
 - hosts: remote
   become: yes
 
-  vars:
-    version: latest
-
   vars_prompt:
 
     - name: packages
@@ -11,13 +8,14 @@
       private: no
 
     - name: version
-      prompt: "Dans quelle version?"
+      prompt: "Dans quelle version? (latest par défaut)"
       private: no
 
   tasks:
     - name: install packages
       become_user: root
-     # sudo: yes
+      vars:
+        version: latest
       package:
         name:  "{{ packages }}"
         state: "{{ version }}"
