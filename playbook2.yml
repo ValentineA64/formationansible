@@ -1,6 +1,6 @@
 - hosts: remote
   become: yes
-  become_user: sudo
+
   vars:
     version: latest
 
@@ -16,6 +16,7 @@
 
   tasks:
     - name: install packages
+      become_user: sudo
      # sudo: yes
       package:
         name:  "{{ packages }}"
