@@ -18,6 +18,7 @@
 # créer un user
 - name: "Create user accounts"
   user:
+    shell: /bin/bash
     name:   "{{ user_name }}"
     groups: users
     append: yes
