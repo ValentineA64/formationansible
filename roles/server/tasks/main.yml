@@ -18,7 +18,7 @@
 # créer un user
 - name: "Create user accounts"
   user:
-    name: "coucou"
+    name: "{{ user_name }}"
     state: present
     # groups: users
     # append: yes
