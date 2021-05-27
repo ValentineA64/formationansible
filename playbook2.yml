@@ -16,7 +16,7 @@
 
   tasks:
     - name: install packages
-      become_user: sudo
+      become_user: root
      # sudo: yes
       package:
         name:  "{{ packages }}"
