@@ -2,9 +2,9 @@
   become: yes
 
   vars_prompt:
-    # - name: packages
-    #   prompt: "Quel package souhaitez-vous installer?"
-    #   private: no
+    - name: packages
+      prompt: "Quel package souhaitez-vous installer?"
+      private: no
     - name: user_name
       prompt: "Quel est le nom de l'utilisateur à ajouter?"
       private: no
