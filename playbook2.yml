@@ -8,3 +8,6 @@
     # - name: user_name
     #   prompt: "Quel est le nom de l'utilisateur à ajouter?"
     #   private: no
+
+  roles:
+    - server
