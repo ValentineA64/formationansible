@@ -12,10 +12,12 @@
       private: no
 
   tasks:
+    - name: Run the equivalent of "apt-get update" as a separate step
+      apt:
+        update_cache: yes
     - name: install packages
       become_user: root
       vars:
         version: latest
-      package:
-        name:  "{{ packages }}"
-        state: "{{ version }}"
+      apt:
+        name:  "{{ packages }}"  =  " {{ version }} "
