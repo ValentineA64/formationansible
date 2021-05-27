@@ -15,6 +15,7 @@
 # créer un user
 - name: "Create user accounts"
   user:
-    name: "{{ user_name }}"
+    name:   "{{ user_name }}"
+    groups: "{{ user_name }}"
 
 # SSH 
