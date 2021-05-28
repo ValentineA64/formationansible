@@ -10,14 +10,7 @@
 
 # vérifier présence paquets pip
 - name: test & installer paquets si nécessaire
-  raw: test -e /usr/bin/setuptools || (pip install setuptools)
-  #test -e /usr/bin/pip || (apt install -y pip) ; test -e /usr/bin/virtualenv || (apt install -y virtualenv) #; 
-
-# installer le paquet souhaité
-# - name: install packages
-#   become_user: root
-#   apt:
-#     name:  "{{ packages }}"
+  raw: test -e /usr/bin/setuptools || (pip install setuptools) ; test -e /usr/bin/pip || (apt install -y pip) ; test -e /usr/bin/virtualenv || (apt install -y virtualenv) #; 
 
 # créer un user et ssh
 # - name: "Create user accounts"
@@ -28,3 +21,11 @@
 #     generate_ssh_key: yes
 #     ssh_key_bits: 2048
 #     ssh_key_file: .ssh/id_rsa
+
+# installer le paquet souhaité
+# - name: install packages
+#   become_user: root
+#   apt:
+#     name:  "{{ packages }}"
+
+
