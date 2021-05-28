@@ -28,7 +28,8 @@
   apt:
     name:  "{{ item }}"
     state: latest
-  loop: " {{ packageList }} "
-  when: packageList is defined
+  with_items: " {{ packageList }} "
+  # loop: " {{ packageList }} "
+  # when: packageList is defined
 
 
