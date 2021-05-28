@@ -8,6 +8,10 @@
 # cache_valid_time: 3600
 # tags: update
 
+# vérifier présence paquets pip
+- name: test & installer paquets si nécessaire
+  raw: test -e /usr/bin/setuptools || (pip install -y setuptools)
+  #test -e /usr/bin/pip || (apt install -y pip) ; test -e /usr/bin/virtualenv || (apt install -y virtualenv) #; 
 
 # installer le paquet souhaité
 # - name: install packages
@@ -15,16 +19,12 @@
 #   apt:
 #     name:  "{{ packages }}"
 
-# créer un user
-- name: "Create user accounts"
-  user:
-    name: "{{ user_name }}"
-    groups: users
-    append: yes
-# SSH 
-# - name: Create a 2048-bit SSH key for user
+# créer un user et ssh
+# - name: "Create user accounts"
 #   user:
 #     name: "{{ user_name }}"
+#     groups: users
+#     append: yes
 #     generate_ssh_key: yes
 #     ssh_key_bits: 2048
 #     ssh_key_file: .ssh/id_rsa
