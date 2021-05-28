@@ -2,12 +2,21 @@
   become: yes
 
   vars_prompt:
+<<<<<<< HEAD
     # - name: packages
     #   prompt: "Quel package souhaitez-vous installer?"
     #   private: no
     # - name: user_name
     #   prompt: "Quel est le nom de l'utilisateur à ajouter?"
     #   private: no
+=======
+    - name: packages
+      prompt: "Quel package souhaitez-vous installer?"
+      private: no
+    - name: user_name
+      prompt: "Quel est le nom de l'utilisateur à ajouter?"
+      private: no
+>>>>>>> 5f17d983ca705bed6c406dcd85bdd953fe4841d6
 
   roles:
     - server
