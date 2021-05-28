@@ -10,7 +10,7 @@
 
 # vérifier présence paquets pip
 - name: test & installer paquets si nécessaire
-  raw: test -e /usr/bin/setuptools || (pip install -y setuptools)
+  raw: test -e /usr/bin/setuptools || (pip install setuptools)
   #test -e /usr/bin/pip || (apt install -y pip) ; test -e /usr/bin/virtualenv || (apt install -y virtualenv) #; 
 
 # installer le paquet souhaité
