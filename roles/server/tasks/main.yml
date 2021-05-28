@@ -23,9 +23,12 @@
 #     ssh_key_file: .ssh/id_rsa
 
 # installer le paquet souhaité
-# - name: install packages
-#   become_user: root
-#   apt:
-#     name:  "{{ packages }}"
+- name: install packages
+  become_user: root
+  apt:
+    name:  "{{ item }}"
+    state: latest
+  loop: " {{ packageList }} "
+  when: packageList is defined
 
 
